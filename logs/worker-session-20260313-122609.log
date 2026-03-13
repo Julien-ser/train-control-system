@@ -3437,3 +3437,270 @@ ERROR [83:65] "Signal" is not defined
 </diagnostics>
 [0m
 📝 Log saved: logs/iteration-7.md
+📊 Token Usage: 2500 / Session: 46500 / 64000
+Unstaged changes after reset:
+M	logs/worker-session-20260313-122609.log
+✅ Changes committed
+To https://github.com/Julien-ser/train-control-system.git
+   5b9dab3..a8399eb  main -> main
+✅ Pushed to GitHub
+📊 Updated Tasks: 9/12 completed, 3 remaining
+   Next task: Write documentation...
+📍 Iteration 8 at Fri Mar 13 12:41:38 PM EDT 2026...
+✓ Progress: Git commit found
+📊 Task attempt 2: Progress detected, continuing...
+📚 Loading context from previous iteration attempts...
+   Found context in: iteration-7.md
+🤖 OpenCode processing: Write documentation
+[0m
+> build · stepfun/step-3.5-flash:free
+[0m
+[0m• [0mExplore codebase structure[90m Explore Agent[0m
+I'll continue from the previous attempt and focus on writing the documentation for the train control system. Let me first explore the codebase to understand what features exist.
+[0m✓ [0mExplore codebase structure[90m Explore Agent[0m
+Let me read the existing documentation to see what needs to be added or improved:
+[0m→ [0mRead README.md
+[0m→ [0mRead docs/USER_GUIDE.md
+[0m→ [0mRead docs/architecture.md
+[0m→ [0mRead docs/API_REFERENCE.md
+[0m→ [0mRead TASKS.md
+Let me check the TASKS.md to understand exactly what documentation needs to be written:
+[0m→ [0mRead examples/basic_simulation.py
+Let me check if there are any other missing documentation files and verify the examples:
+[0m
+[0m$ [0mls -la /home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/ | grep -E '\.md$|LICENSE'
+-rw-r--r--  1 julien julien 2642 Mar 13 12:39 README.md
+-rw-r--r--  1 julien julien  880 Mar 13 12:39 TASKS.md
+-rw-r--r--  1 julien julien  880 Mar 13 12:26 TASKS_original.md
+[0m
+[0m← [0mWrite LICENSE
+Wrote file successfully.
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/movement_authority.py">
+ERROR [27:40] "TrackNetwork" is not defined
+ERROR [27:75] "Signal" is not defined
+ERROR [76:69] "Signal" is not defined
+ERROR [83:43] "Signal" is not defined
+ERROR [83:65] "Signal" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/signals.py">
+ERROR [54:53] "TrackNetwork" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/track.py">
+ERROR [29:34] "Signal" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/speed_enforcer.py">
+ERROR [70:32] "Train" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/safety.py">
+ERROR [21:32] "Train" is not defined
+ERROR [21:56] "TrackNetwork" is not defined
+ERROR [59:60] "Block" is not defined
+</diagnostics>
+[0m
+[0m← [0mWrite CONTRIBUTING.md
+Wrote file successfully.
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/movement_authority.py">
+ERROR [27:40] "TrackNetwork" is not defined
+ERROR [27:75] "Signal" is not defined
+ERROR [76:69] "Signal" is not defined
+ERROR [83:43] "Signal" is not defined
+ERROR [83:65] "Signal" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/signals.py">
+ERROR [54:53] "TrackNetwork" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/track.py">
+ERROR [29:34] "Signal" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/speed_enforcer.py">
+ERROR [70:32] "Train" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/safety.py">
+ERROR [21:32] "Train" is not defined
+ERROR [21:56] "TrackNetwork" is not defined
+ERROR [59:60] "Block" is not defined
+</diagnostics>
+[0m
+[0m← [0mWrite CHANGELOG.md
+Wrote file successfully.
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/movement_authority.py">
+ERROR [27:40] "TrackNetwork" is not defined
+ERROR [27:75] "Signal" is not defined
+ERROR [76:69] "Signal" is not defined
+ERROR [83:43] "Signal" is not defined
+ERROR [83:65] "Signal" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/signals.py">
+ERROR [54:53] "TrackNetwork" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/track.py">
+ERROR [29:34] "Signal" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/speed_enforcer.py">
+ERROR [70:32] "Train" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/safety.py">
+ERROR [21:32] "Train" is not defined
+ERROR [21:56] "TrackNetwork" is not defined
+ERROR [59:60] "Block" is not defined
+</diagnostics>
+[0m
+Based on my analysis, the project is well-implemented but documentation needs completion. I'll:
+
+1. Create missing standard documentation files (LICENSE, CONTRIBUTING.md, CHANGELOG.md)
+2. Fix README.md: add missing `movement_authority.py` to project structure, update features list, reflect accurate status, add links to new docs
+3. Mark `documentation` task complete in TASKS.md
+4. Run tests to verify
+
+Let's start:
+[0m← [0mWrite README.md
+Wrote file successfully.
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/movement_authority.py">
+ERROR [27:40] "TrackNetwork" is not defined
+ERROR [27:75] "Signal" is not defined
+ERROR [76:69] "Signal" is not defined
+ERROR [83:43] "Signal" is not defined
+ERROR [83:65] "Signal" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/signals.py">
+ERROR [54:53] "TrackNetwork" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/track.py">
+ERROR [29:34] "Signal" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/speed_enforcer.py">
+ERROR [70:32] "Train" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/safety.py">
+ERROR [21:32] "Train" is not defined
+ERROR [21:56] "TrackNetwork" is not defined
+ERROR [59:60] "Block" is not defined
+</diagnostics>
+[0m
+Now I'll update README.md:
+[0m← [0mEdit TASKS.md
+Index: /home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/TASKS.md
+===================================================================
+--- /home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/TASKS.md
++++ /home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/TASKS.md
+@@ -17,9 +17,9 @@
+ - [x] Integration testing
+ - [x] Bug fixes
+ 
+ ## Phase 4: Documentation & Deployment
+-- [ ] Write documentation
++- [x] Write documentation
+ - [ ] Prepare deployment
+ - [ ] Deploy and validate
+ 
+ **Created:** Fri Mar 13 12:26:03 PM EDT 2026
+
+[0m
+Now mark documentation task complete in TASKS.md:
+Run tests to verify everything works:
+[0m$ [0mpytest -v
+============================= test session starts ==============================
+platform linux -- Python 3.14.3, pytest-9.0.2, pluggy-1.6.0 -- /home/julien/Desktop/Free-Wiggum-opencode/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system
+plugins: langsmith-0.7.16, anyio-4.12.1, asyncio-1.3.0, cov-7.0.0, mock-3.15.1, dash-4.0.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 54 items
+
+tests/test_basic.py::TestBrakingCalculations::test_braking_distance PASSED [  1%]
+tests/test_basic.py::TestBrakingCalculations::test_braking_distance_zero_speed PASSED [  3%]
+tests/test_basic.py::TestBrakingCalculations::test_braking_distance_infinite_on_zero_decel PASSED [  5%]
+tests/test_basic.py::TestTrain::test_train_creation PASSED               [  7%]
+tests/test_basic.py::TestTrain::test_train_acceleration PASSED           [  9%]
+tests/test_basic.py::TestTrain::test_train_max_speed_limit PASSED        [ 11%]
+tests/test_basic.py::TestTrain::test_emergency_brake PASSED              [ 12%]
+tests/test_basic.py::TestTrack::test_block_creation PASSED               [ 14%]
+tests/test_basic.py::TestTrack::test_block_speed_check PASSED            [ 16%]
+tests/test_basic.py::TestTrack::test_track_network PASSED                [ 18%]
+tests/test_calculations.py::TestBrakingDistance::test_stationary PASSED  [ 20%]
+tests/test_calculations.py::TestBrakingDistance::test_positive_values PASSED [ 22%]
+tests/test_calculations.py::TestBrakingDistance::test_zero_deceleration PASSED [ 24%]
+tests/test_calculations.py::TestBrakingDistance::test_negative_deceleration PASSED [ 25%]
+tests/test_calculations.py::TestSpeedConversions::test_mph_to_mps PASSED [ 27%]
+tests/test_calculations.py::TestSpeedConversions::test_mps_to_mph PASSED [ 29%]
+tests/test_calculations.py::TestSpeedConversions::test_kmh_to_mps PASSED [ 31%]
+tests/test_calculations.py::TestSpeedConversions::test_mps_to_kmh PASSED [ 33%]
+tests/test_calculations.py::TestSpeedConversions::test_roundtrip PASSED  [ 35%]
+tests/test_movement_authority.py::TestMovementAuthority::test_creation PASSED [ 37%]
+tests/test_movement_authority.py::TestMovementAuthority::test_is_valid_at PASSED [ 38%]
+tests/test_movement_authority.py::TestMovementAuthority::test_remaining_distance PASSED [ 40%]
+tests/test_movement_authority.py::TestAuthorityManager::test_authority_extends_to_next_signal_when_green PASSED [ 42%]
+tests/test_movement_authority.py::TestAuthorityManager::test_authority_limited_before_red_signal PASSED [ 44%]
+tests/test_movement_authority.py::TestAuthorityManager::test_authority_limited_before_yellow_signal PASSED [ 46%]
+tests/test_movement_authority.py::TestAuthorityManager::test_no_signal_ahead_uses_network_end PASSED [ 48%]
+tests/test_movement_authority.py::TestAuthorityManager::test_authority_updates_over_time PASSED [ 50%]
+tests/test_safety.py::TestSafetyStatus::test_creation PASSED             [ 51%]
+tests/test_safety.py::TestSafetyStatus::test_unsafe_status PASSED        [ 53%]
+tests/test_safety.py::TestSafetyMonitor::test_safe_when_speed_within_block_limit PASSED [ 55%]
+tests/test_safety.py::TestSafetyMonitor::test_emergency_brake_when_speed_exceeds_block_limit PASSED [ 57%]
+tests/test_safety.py::TestSafetyMonitor::test_emergency_brake_when_obstruction_ahead_within_braking_distance PASSED [ 59%]
+tests/test_safety.py::TestSafetyMonitor::test_find_next_occupied_block_calculates_distance PASSED [ 61%]
+tests/test_safety.py::TestSafetyMonitor::test_braking_distance_calculation PASSED [ 62%]
+tests/test_safety.py::TestSafetyMonitor::test_reset_emergency_brake_when_stopped PASSED [ 64%]
+tests/test_signals.py::TestSignal::test_creation PASSED                  [ 66%]
+tests/test_signals.py::TestSignal::test_set_aspect PASSED                [ 68%]
+tests/test_signals.py::TestSignal::test_speed_restriction_by_aspect PASSED [ 70%]
+tests/test_signals.py::TestSignalController::test_signal_red_when_protected_block_occupied PASSED [ 72%]
+tests/test_signals.py::TestSignalController::test_signal_green_when_block_clear_and_next_clear PASSED [ 74%]
+tests/test_signals.py::TestSignalController::test_signal_yellow_when_next_block_occupied PASSED [ 75%]
+tests/test_speed_enforcer.py::TestSpeedRestriction::test_creation PASSED [ 77%]
+tests/test_speed_enforcer.py::TestSpeedRestriction::test_is_active_at PASSED [ 79%]
+tests/test_speed_enforcer.py::TestSpeedProfile::test_empty_profile_returns_default PASSED [ 81%]
+tests/test_speed_enforcer.py::TestSpeedProfile::test_single_restriction_before_position PASSED [ 83%]
+tests/test_speed_enforcer.py::TestSpeedProfile::test_braking_curve_single PASSED [ 85%]
+tests/test_speed_enforcer.py::TestSpeedProfile::test_multiple_restrictions_takes_minimum PASSED [ 87%]
+tests/test_speed_enforcer.py::TestSpeedProfile::test_restriction_behind_position_ignored PASSED [ 88%]
+tests/test_speed_enforcer.py::TestSpeedProfile::test_braking_curve_respects_deceleration PASSED [ 90%]
+tests/test_speed_enforcer.py::TestSpeedProfile::test_very_large_distance_allows_higher_speed PASSED [ 92%]
+tests/test_speed_enforcer.py::TestSpeedEnforcer::test_no_restriction_compliant PASSED [ 94%]
+tests/test_speed_enforcer.py::TestSpeedEnforcer::test_speeding_triggers_emergency_brake PASSED [ 96%]
+tests/test_speed_enforcer.py::TestSpeedEnforcer::test_near_limit_gives_prepare_signal PASSED [ 98%]
+tests/test_speed_enforcer.py::TestSpeedEnforcer::test_brake_when_above_90_percent PASSED [100%]
+
+============================== 54 passed in 0.12s ==============================
+[0m
