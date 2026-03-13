@@ -6,7 +6,7 @@ sys.path.insert(0, "src")
 
 from train_control.train import Train
 from train_control.track import Block, TrackNetwork
-from train_control.speed_enforcer import SpeedProfile, SpeedEnforcer
+from train_control.speed_enforcer import SpeedProfile, SpeedEnforcer, SpeedRestriction
 from train_control.safety import SafetyMonitor
 from train_control.signals import Signal, SignalAspect, SignalController
 
@@ -65,15 +65,9 @@ def main():
     print("\n[4] Setting up speed enforcement...")
     speed_profile = SpeedProfile()
     # Add block speed limits as restrictions
-    speed_profile.add_restriction(
-        type("SpeedRestriction", (), {"location": 1000.0, "speed_limit": 25.0})()
-    )
-    speed_profile.add_restriction(
-        type("SpeedRestriction", (), {"location": 2000.0, "speed_limit": 20.0})()
-    )
-    speed_profile.add_restriction(
-        type("SpeedRestriction", (), {"location": 3000.0, "speed_limit": 15.0})()
-    )
+    speed_profile.add_restriction(SpeedRestriction(location=1000.0, speed_limit=25.0))
+    speed_profile.add_restriction(SpeedRestriction(location=2000.0, speed_limit=20.0))
+    speed_profile.add_restriction(SpeedRestriction(location=3000.0, speed_limit=15.0))
 
     enforcer = SpeedEnforcer(train, speed_profile)
 

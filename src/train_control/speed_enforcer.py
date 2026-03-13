@@ -27,16 +27,19 @@ class SpeedProfile:
         """Add a speed restriction to the profile."""
         self.restrictions.append(restriction)
 
-    def get_max_speed_at(self, position: float, current_speed: float = 0.0) -> float:
+    def get_max_speed_at(
+        self, position: float, current_speed: float = 0.0, deceleration: float = 0.6
+    ) -> float:
         """
-        Calculate maximum allowed speed at given position.
+        Calculate maximum allowed speed at given position using braking curves.
 
         Args:
             position: Current position (meters)
-            current_speed: Current train speed for braking curve calc
+            current_speed: Current train speed (for braking curve calculation)
+            deceleration: Service braking deceleration (m/s²)
 
         Returns:
-            Maximum allowed speed in m/s
+            Maximum allowed speed in m/s considering all future restrictions
         """
         max_speed = float("inf")
 
@@ -44,14 +47,21 @@ class SpeedProfile:
             if restriction.location >= position:
                 # Future restriction: calculate braking curve
                 distance = restriction.location - position
-                # Simple: assume instant deceleration at max decel
-                # TODO: Add proper braking curve calculation
-                max_speed = min(max_speed, restriction.speed_limit)
+
+                # Calculate speed needed to stop at the restriction point
+                # using v² = 2*a*d (from v_f² = v_i² + 2*a*d, where v_f = 0)
+                braking_speed = (2 * deceleration * distance) ** 0.5
+
+                # Take minimum of:
+                # - braking curve speed (ability to stop)
+                # - the restriction's speed limit
+                restriction_max = min(restriction.speed_limit, braking_speed)
+                max_speed = min(max_speed, restriction_max)
             else:
-                # Past restriction (shouldn't happen if ordered correctly)
+                # Past restriction - ignore (shouldn't happen if ordered correctly)
                 pass
 
-        return max_speed if max_speed != float("inf") else 60.0  # Default 135 km/h
+        return max_speed if max_speed != float("inf") else 30.0  # Default 108 km/h
 
 
 class SpeedEnforcer:
@@ -70,7 +80,9 @@ class SpeedEnforcer:
         Returns:
             Dict with compliance status and recommended action
         """
-        max_allowed = self.speed_profile.get_max_speed_at(position, speed)
+        max_allowed = self.speed_profile.get_max_speed_at(
+            position, speed, self.train.deceleration
+        )
 
         if speed > max_allowed:
             return {

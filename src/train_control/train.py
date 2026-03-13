@@ -13,7 +13,7 @@ class Train:
     acceleration: float  # m/s²
     deceleration: float  # m/s² (service brake)
     emergency_deceleration: float  # m/s² (emergency brake)
-    mass: float  # kg (optional for advanced physics)
+    mass: float = 10000.0  # kg (default mass for a typical train)
     length: float = 20.0  # meters
 
     # Current state

@@ -58,43 +58,41 @@ class SafetyMonitor:
 
     def _find_next_occupied_block(self) -> tuple[Optional["Block"], float]:
         """Find the next occupied block ahead and distance to it."""
-        # Simple implementation: scan forward from current position
-        cumulative_distance = 0.0
-        current_pos = self.train.position
+        # Build cumulative start positions for all blocks assuming linear order
+        cumulative = 0.0
+        start_positions = {}
+        for block in self.track_network.blocks.values():
+            start_positions[block.id] = cumulative
+            cumulative += block.length
 
-        # Start from current block
-        block = self.track_network.get_block_by_position(current_pos)
-        if not block:
-            return None, float("inf")
+        train_pos = self.train.position
+        nearest_block = None
+        nearest_distance = float("inf")
 
-        # Check blocks in order until we find occupied or reach end
-        checked_blocks = set()
-        blocks_to_check = [block.id]
-
-        while blocks_to_check:
-            block_id = blocks_to_check.pop(0)
-            if block_id in checked_blocks:
-                continue
-            checked_blocks.add(block_id)
-
-            current_block = self.track_network.blocks.get(block_id)
-            if not current_block:
+        # Check all occupied blocks
+        for block in self.track_network.blocks.values():
+            if not block.occupied:
                 continue
 
-            if current_block.id != block.id and current_block.occupied:
-                # Found occupied block, calculate distance
-                distance = (
-                    current_block.id
-                )  # simplified - would need proper calculation
-                # For now, return a simple estimate
-                return current_block, 100.0  # placeholder
+            start = start_positions[block.id]
+            end = start + block.length
 
-            # Add connected blocks
-            for next_id in self.track_network.connections.get(block_id, []):
-                if next_id not in checked_blocks:
-                    blocks_to_check.append(next_id)
+            # Calculate distance from train to this block
+            if train_pos < start:
+                # Block is ahead
+                distance = start - train_pos
+            elif start <= train_pos < end:
+                # Train is inside this block (collision)
+                distance = 0.0
+            else:
+                # Block is behind
+                continue
 
-        return None, float("inf")
+            if distance < nearest_distance:
+                nearest_distance = distance
+                nearest_block = block
+
+        return nearest_block, nearest_distance
 
     def _get_braking_distance(self) -> float:
         """

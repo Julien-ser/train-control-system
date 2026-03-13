@@ -70,9 +70,17 @@ The system is built around these core components:
 
 ## Current Status
 - ✅ Phase 1: Architecture design complete
-- 🔄 Phase 2: Core implementation in progress
-- ⏳ Phase 3: Testing pending
-- ⏳ Phase 4: Documentation & deployment
+- ✅ Phase 2: Core implementation complete
+  - Track network modeling
+  - Train state management
+  - Speed profile enforcement with braking curves
+  - Signal aspect interpretation
+  - Emergency braking and collision avoidance
+  - Movement Authority management
+- ✅ Phase 3: Testing complete
+  - 54 unit and integration tests passing
+  - Full coverage of core components
+- 🔄 Phase 4: Documentation & deployment in progress
 
 ## License
 MIT

@@ -43,15 +43,20 @@ class TestSpeedConversions:
         assert mph_to_mps(60) == pytest.approx(26.8224)
 
     def test_mps_to_mph(self):
-        assert mps_to_mph(27) == pytest.approx(60.5)
+        assert mps_to_mph(27) == pytest.approx(60.3973, rel=1e-4)
 
     def test_kmh_to_mps(self):
-        assert kmh_to_mps(100) == pytest.approx(27.78)
+        assert kmh_to_mps(100) == pytest.approx(27.7778, rel=1e-4)
 
     def test_mps_to_kmh(self):
-        assert mps_to_kmh(27.78) == pytest.approx(100)
+        assert mps_to_kmh(27.78) == pytest.approx(100.008, rel=1e-3)
 
     def test_roundtrip(self):
         """Conversion roundtrip should be accurate."""
         original = 72.5
-        assert mps_to_kmh(mph_to_mps(original)) == pytest.approx(original, rel=1e-3)
+        # mph -> mps -> kmh is not identity, that's expected
+        # Let's test that mph -> mps -> kmh gives correct conversion
+        mps = mph_to_mps(original)
+        kmh = mps_to_kmh(mps)
+        expected_kmh = original * 1.60934  # miles to km
+        assert kmh == pytest.approx(expected_kmh, rel=1e-3)
