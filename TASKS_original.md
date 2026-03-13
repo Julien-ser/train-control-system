@@ -3,7 +3,7 @@
 **Mission:** Research what types of software controls are implemented for current trains and implement a sample use case with code outlines for how to use it
 
 ## Phase 1: Setup & Planning
-- [x] Review requirements and design architecture
+- [ ] Review requirements and design architecture
 - [ ] Set up development environment and dependencies
 - [ ] Create project structure
 

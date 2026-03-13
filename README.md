@@ -1,29 +1,78 @@
-# Project Template
+# Train Control System
 
-This is a template for new projects created via `wiggum_master.sh create`.
+A Python-based implementation demonstrating modern railway control systems including speed regulation, signal monitoring, and safety protocols.
 
-Each project:
-- Lives in `projects/<project-name>/`
-- Has its own GitHub repository
-- Runs its own autonomous OpenCode agent loop
-- Tracks progress in TASKS.md
+## Mission
+Research and implement sample use cases for software controls used in modern train systems, including:
+- Automatic Train Protection (ATP)
+- Speed enforcement
+- Signal aspect monitoring
+- Brake curve calculation
+- Position tracking
 
-## Setup
+## Features
+- Track network modeling
+- Train state management
+- Speed profile enforcement
+- Signal aspect interpretation
+- Emergency braking calculation
+- Movement authority management
 
-1. Create: `bash wiggum_master.sh create "my-project" "Description"`
-2. View: `cat projects/my-project/README.md`
-3. Initialize: `cd projects/my-project && opencode /init --yes`
-4. Run: `cd projects/my-project && bash wiggum.sh`
+## Installation & Setup
 
-## Files
+### Prerequisites
+- Python 3.8+
+- Git
 
-- **README.md** - Project documentation
-- **TASKS.md** - Development task list
-- **prompt.txt** - Agent instructions (project-specific)
-- **AGENTS.md** - Project context (auto-generated)
-- **src/** - Source code directory
-- **tests/** - Test files
+### Quick Start
+```bash
+# Clone and navigate
+cd train-control-system
 
-## Customization
+# Install dependencies
+pip install -r requirements.txt
 
-Update TASKS.md with your project goals, then let the agent handle it!
+# Run examples
+python examples/basic_simulation.py
+
+# Run tests
+pytest tests/
+```
+
+## Project Structure
+```
+train-control-system/
+├── src/
+│   ├── train_control/
+│   │   ├── __init__.py
+│   │   ├── train.py          # Train state & control
+│   │   ├── track.py          # Track network & blocks
+│   │   ├── signals.py        # Signal aspect management
+│   │   ├── speed_enforcer.py # Speed profile enforcement
+│   │   └── safety.py         # Braking calculations
+│   └── utils/
+│       └── calculations.py   # Physics calculations
+├── tests/                    # Unit & integration tests
+├── examples/                 # Usage examples
+├── docs/                     # Documentation
+├── requirements.txt          # Python dependencies
+└── TASKS.md                  # Development progress
+```
+
+## Architecture
+The system is built around these core components:
+
+1. **Track Network** - Represents rail infrastructure with blocks, gradients, and speed limits
+2. **Train** - Models train dynamics (position, speed, braking capability)
+3. **Signal System** - Manages signal aspects and movement authorities
+4. **Speed Enforcer** - Calculates and enforces speed profiles
+5. **Safety Monitor** - Emergency braking and collision avoidance
+
+## Current Status
+- ✅ Phase 1: Architecture design complete
+- 🔄 Phase 2: Core implementation in progress
+- ⏳ Phase 3: Testing pending
+- ⏳ Phase 4: Documentation & deployment
+
+## License
+MIT
