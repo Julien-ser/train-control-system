@@ -3300,3 +3300,140 @@ Index: /home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/R
 Now update README.md to reflect the completed work. I'll update the Current Status and possibly the Features list:
 📝 Log saved: logs/iteration-6.md
 📊 Token Usage: 15750 / Session: 44000 / 64000
+✅ Changes committed
+To https://github.com/Julien-ser/train-control-system.git
+   2728f85..5b9dab3  main -> main
+✅ Pushed to GitHub
+📊 Updated Tasks: 9/12 completed, 3 remaining
+   Next task: Write documentation...
+📍 Iteration 7 at Fri Mar 13 12:39:29 PM EDT 2026...
+🤖 OpenCode processing: Write documentation
+[0m
+> build · stepfun/step-3.5-flash:free
+[0m
+[0m→ [0mRead .
+[0m→ [0mRead TASKS.md
+[0m→ [0mRead README.md
+I'll start by reading the TASKS.md file and exploring the project structure to understand what needs to be documented.
+Now let me explore the source code to understand what features need to be documented:
+[0m✱ [0mGlob "**/*.py"[90m in src · 9 matches[0m
+[0m✱ [0mGlob "**/*"[90m in docs · 1 match[0m
+[0m✱ [0mGlob "**/*.py"[90m in examples · 1 match[0m
+[0m→ [0mRead setup.py
+[0m→ [0mRead docs/architecture.md
+[0m→ [0mRead examples/basic_simulation.py
+[0m→ [0mRead requirements.txt
+Let me read some key files to understand what's been implemented:
+Let me read the core modules to understand the API:
+[0m→ [0mRead src/train_control/__init__.py
+[0m→ [0mRead src/train_control/signals.py
+[0m→ [0mRead src/train_control/train.py
+[0m→ [0mRead src/train_control/track.py
+[0m→ [0mRead src/train_control/speed_enforcer.py
+[0m→ [0mRead src/train_control/safety.py
+[0m→ [0mRead src/train_control/movement_authority.py
+[0m✱ [0mGlob "*.py"[90m in tests · 6 matches[0m
+[0m→ [0mRead src/utils/calculations.py
+[0m→ [0mRead tests/test_basic.py[90m [limit=50][0m
+Let me verify the test count by running pytest:
+[0m
+[0m$ [0mpython -m pytest tests/ --collect-only 2>&1 | grep "test session starts" -A 20
+============================= test session starts ==============================
+platform linux -- Python 3.14.3, pytest-9.0.2, pluggy-1.6.0
+rootdir: /home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system
+plugins: langsmith-0.7.16, anyio-4.12.1, asyncio-1.3.0, cov-7.0.0, mock-3.15.1, dash-4.0.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 54 items
+
+<Dir train-control-system>
+  <Dir tests>
+    <Module test_basic.py>
+      <Class TestBrakingCalculations>
+        <Function test_braking_distance>
+        <Function test_braking_distance_zero_speed>
+        <Function test_braking_distance_infinite_on_zero_decel>
+      <Class TestTrain>
+        <Function test_train_creation>
+        <Function test_train_acceleration>
+        <Function test_train_max_speed_limit>
+        <Function test_emergency_brake>
+      <Class TestTrack>
+        <Function test_block_creation>
+[0m
+Perfect! The project has 54 tests as mentioned in README. Now I understand what needs to be documented:
+
+1. **docs/** directory needs more documentation files (API reference, user guide)
+2. **README.md** needs to be updated (current status)
+3. **TASKS.md** needs documentation marked as complete
+
+Based on my analysis, I'll create comprehensive documentation. Let me start by creating a USER_GUIDE.md in the docs folder:
+[0m← [0mWrite docs/USER_GUIDE.md
+Wrote file successfully.
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/signals.py">
+ERROR [54:53] "TrackNetwork" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/track.py">
+ERROR [29:34] "Signal" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/safety.py">
+ERROR [21:32] "Train" is not defined
+ERROR [21:56] "TrackNetwork" is not defined
+ERROR [59:60] "Block" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/speed_enforcer.py">
+ERROR [70:32] "Train" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/movement_authority.py">
+ERROR [27:40] "TrackNetwork" is not defined
+ERROR [27:75] "Signal" is not defined
+ERROR [76:69] "Signal" is not defined
+ERROR [83:43] "Signal" is not defined
+ERROR [83:65] "Signal" is not defined
+</diagnostics>
+[0m
+Now let me create an API reference documentation file:
+[0m← [0mWrite docs/API_REFERENCE.md
+Wrote file successfully.
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/signals.py">
+ERROR [54:53] "TrackNetwork" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/track.py">
+ERROR [29:34] "Signal" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/safety.py">
+ERROR [21:32] "Train" is not defined
+ERROR [21:56] "TrackNetwork" is not defined
+ERROR [59:60] "Block" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/speed_enforcer.py">
+ERROR [70:32] "Train" is not defined
+</diagnostics>
+
+LSP errors detected in other files:
+<diagnostics file="/home/julien/Desktop/Free-Wiggum-opencode/projects/train-control-system/src/train_control/movement_authority.py">
+ERROR [27:40] "TrackNetwork" is not defined
+ERROR [27:75] "Signal" is not defined
+ERROR [76:69] "Signal" is not defined
+ERROR [83:43] "Signal" is not defined
+ERROR [83:65] "Signal" is not defined
+</diagnostics>
+[0m
+📝 Log saved: logs/iteration-7.md
