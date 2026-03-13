@@ -3704,3 +3704,23 @@ tests/test_speed_enforcer.py::TestSpeedEnforcer::test_brake_when_above_90_percen
 
 ============================== 54 passed in 0.12s ==============================
 [0m
+All tests pass. Now commit and push changes:
+[0m$ [0mgit add . && git commit -m "docs: complete documentation set with LICENSE, CONTRIBUTING, CHANGELOG, and updated README" && git push origin main
+[main d948441] docs: complete documentation set with LICENSE, CONTRIBUTING, CHANGELOG, and updated README
+ 7 files changed, 775 insertions(+), 19 deletions(-)
+ create mode 100644 CHANGELOG.md
+ create mode 100644 CONTRIBUTING.md
+ create mode 100644 LICENSE
+ create mode 100644 logs/iteration-8.md
+To https://github.com/Julien-ser/train-control-system.git
+   a8399eb..d948441  main -> main
+[0m
+Documentation task completed and pushed to GitHub.
+
+Summary of changes:
+- Added LICENSE (MIT), CONTRIBUTING.md, CHANGELOG.md
+- Updated README with complete structure, features, current status, and links
+- Fixed missing `movement_authority.py` in structure
+- Marked documentation [x] in TASKS.md
+- All 54 tests passing
+📝 Log saved: logs/iteration-8.md

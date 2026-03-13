@@ -390,3 +390,55 @@ tests/test_speed_enforcer.py::TestSpeedEnforcer::test_brake_when_above_90_percen
 ============================== 54 passed in 0.12s ==============================
 [0m
 All tests pass. Now commit and push changes:
+[0m$ [0mgit add . && git commit -m "docs: complete documentation set with LICENSE, CONTRIBUTING, CHANGELOG, and updated README" && git push origin main
+[main d948441] docs: complete documentation set with LICENSE, CONTRIBUTING, CHANGELOG, and updated README
+ 7 files changed, 775 insertions(+), 19 deletions(-)
+ create mode 100644 CHANGELOG.md
+ create mode 100644 CONTRIBUTING.md
+ create mode 100644 LICENSE
+ create mode 100644 logs/iteration-8.md
+To https://github.com/Julien-ser/train-control-system.git
+   a8399eb..d948441  main -> main
+[0m
+Documentation task completed and pushed to GitHub.
+
+Summary of changes:
+- Added LICENSE (MIT), CONTRIBUTING.md, CHANGELOG.md
+- Updated README with complete structure, features, current status, and links
+- Fixed missing `movement_authority.py` in structure
+- Marked documentation [x] in TASKS.md
+- All 54 tests passing
+```
+
+## TASKS.md After Iteration
+
+```markdown
+# train-control-system
+
+**Mission:** Research what types of software controls are implemented for current trains and implement a sample use case with code outlines for how to use it
+
+## Phase 1: Setup & Planning
+- [x] Review requirements and design architecture
+- [x] Set up development environment and dependencies
+- [x] Create project structure
+
+## Phase 2: Core Implementation  
+- [x] Implement main features
+- [x] Integrate APIs and libraries
+- [x] Build core logic
+
+## Phase 3: Testing
+- [x] Write and run tests
+- [x] Integration testing
+- [x] Bug fixes
+
+## Phase 4: Documentation & Deployment
+- [x] Write documentation
+- [ ] Prepare deployment
+- [ ] Deploy and validate
+
+**Created:** Fri Mar 13 12:26:03 PM EDT 2026
+**Mission:** Research what types of software controls are implemented for current trains and implement a sample use case with code outlines for how to use it
+```
+
+**Completed at:** Fri Mar 13 12:45:19 PM EDT 2026
